@@ -1,7 +1,7 @@
 PERL-practices
 ==============
 
-Practices in PERL
++Practices in PERL+
 
 Edited by Minsheng Zheng on May 30, 2013
 Environment:
@@ -9,7 +9,8 @@ OS - Windows 7;
 IDE - Eclipse + EPIC;
 Database - MySQL Server 5.6, MySQL Workbench 5.2CE, DBI, DBD::mysql;
 
-Detailed instructions:
+Detailed instructions
+---------------------
 The goal is to write a PERL script in order
 to update a table we defined as "count_tbl" based on the data from
 another table "mailing," stored with over 10000000 email address
@@ -44,7 +45,8 @@ is extremely large and the growth of number of email addresses in a short
 period of time is not that significant compared to existing data.)
 
 
-Performance issue and alternative solution:
+Performance issue and alternative solution
+------------------------------------------
 Since we have at least 100000 domain names, and for each day we need to count all of them once,
 this table is going to grow by at least 100000 rows everyday, resulting into a table with at least
 36500000 rows after a year. A solution would be to horizontally partition the table by days periodically. 
@@ -53,9 +55,9 @@ compared to 36500000 rows.
 
 
 Core components:
+----------------
 
-updateCount.pl
---------------
+### updateCount.pl
 This script keeps track of daily count of each single domain name.
 
 To be optimized:
@@ -67,9 +69,7 @@ Alternative implementation could be:
 - fetch part of the data, process them and INSERT count of partial data into count_tbl
 - fetch next part of data, UPDATE count into count_tbl, until all the email addresses are counted
 
-
-reportTOP.pl
-------------
+### reportTOP.pl
 This script computes growth rate and hash (domain name, growth rate) pair
 into a hash array. Then it output the top N records while sorting
 the hash array by values in descending order. Sorting algorithm for large
