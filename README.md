@@ -5,9 +5,9 @@ Practices in PERL
 
 Edited by Minsheng Zheng on May 30, 2013
 Environment:
-OS - Windows 7
-IDE - Eclipse + EPIC
-Database - MySQL Server 5.6, MySQL Workbench 5.2CE, DBI, DBD::mysql
+OS - Windows 7;
+IDE - Eclipse + EPIC;
+Database - MySQL Server 5.6, MySQL Workbench 5.2CE, DBI, DBD::mysql;
 
 Detailed instructions:
 The goal is to write a PERL script in order
@@ -32,13 +32,13 @@ count of domain names.
 Finally, we can run "reportTOP.pl" and we will be able to see the top N
 records printed to the Console, in descending order. A sample would be like
 this, in descending order:
-------------------------------
+
 gmail.com - 14.4444444444444
 casalemedia.com - 12.5
 hotmail.com - 10.5
 amazon.com - 4.25
 rogers.com - 3.57142857142857
-------------------------------
+
 (In real-life the percentage will be much smaller because the base table "mailing"
 is extremely large and the growth of number of email addresses in a short 
 period of time is not that significant compared to existing data.)
